@@ -6,9 +6,15 @@
     "engines": {
         "vscode": "^1.55.0"
     },
+    "publisher": "StirlingMarketingGroup",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/StirlingMarketingGroup/go-mysql-highlighter.git"
+    },
     "categories": [
         "Snippets"
     ],
+    "icon": "images/icon.png",
     "contributes": {
         "grammars": [
 			{

@@ -1,9 +1,7 @@
-# Go MySQL Highlighter README
+# Go MySQL Highlighter
 
 Syntax highlights MySQL strings in Golang. Nothing more, nothing less.
 
-## Features
-
 Also handles highlighting across multiple lines, in case you write your queries that way (like we do).
 
-![example](images/example)
+![example](images/example.png)

@@ -1,0 +1,29 @@
+{
+    "name": "go-mysql-highlighter",
+    "displayName": "Go MySQL Highlighter",
+    "description": "Syntax highlights MySQL strings in Go code.",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.55.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "grammars": [
+			{
+				"path": "./syntaxes/highlight-string-code.json",
+				"scopeName": "highlight-string-code",
+				"injectTo": [
+					"source.go"
+				],
+				"embeddedLanguages": {
+					"meta.embedded.block.sql": "sql"
+				},
+				"tokenTypes": {
+					"meta.*": "other"
+				}
+			}
+		]
+    }
+}

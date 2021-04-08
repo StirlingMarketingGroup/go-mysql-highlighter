@@ -1,0 +1,83 @@
+{
+    "scopeName": "highlight-string-code",
+    "name": "source.stringcode",
+    "injectionSelector": "L:source - (meta.embedded), L:text - (mate.embedded)",
+    "patterns": [
+        {
+            "include": "#highlight-string-sql"
+        }
+    ],
+    "repository": {
+        "keep-variable": {
+            "patterns": [
+                {
+                    "begin": "(\\{)",
+                    "end": "(\\})",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "punctuation.section.embedded.begin"
+                        }
+                    },
+                    "endCaptures": {
+                        "1": {
+                            "name": "punctuation.section.embedded.end"
+                        }
+                    },
+                    "contentName": "variable"
+                }
+            ]
+        },
+        "keep-variables": {
+            "patterns": [
+                {
+                    "begin": "(`|'|\")",
+                    "end": "(`|'|\")",
+                    "captures": {
+                        "1": {
+                            "name": "string.quoted"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "include": "string.quoted"
+                        },
+                        {
+                            "include": "#keep-variable"
+                        }
+                    ],
+                    "contentName": "string.quoted"
+                },
+                {
+                    "include": "#keep-variable"
+                }
+            ]
+        },
+        "highlight-string-sql": {
+            "patterns": [
+                {
+                    "begin": "(?<=\")(select|insert|delete|update|drop|alter|create|set|truncate|grant|revoke)(?=[\\s`*\\(])",
+                    "end": "(?<!^\\s*)(?=\"(?!\\s?\\+\\n))",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "meta.embedded.block.sql keyword.other.DML.sql"
+                        }
+                    },
+                    "contentName": "meta.embedded.block.sql",
+                    "patterns": [
+                        {
+                            "name": "meta.embedded.block.sql entity.name.param",
+                            "match": "@@[A-Za-z0-9_]+"
+                        },
+                        {
+                            "name": "meta.embedded.block.sql entity.name.backtick",
+                            "match": "`.+?`"
+                        },
+                        {
+                            "include": "source.sql"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

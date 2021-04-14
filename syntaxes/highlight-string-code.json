@@ -55,7 +55,7 @@
         "highlight-string-sql": {
             "patterns": [
                 {
-                    "begin": "(?<=\")(select|insert|delete|update|drop|alter|create|set|truncate|grant|revoke)(?=[\\s`*\\(])",
+                    "begin": "(?<=\")(select|insert|replace|delete|update|drop|alter|create|set|truncate|grant|revoke)(?=[\\s`*\\(])",
                     "end": "(?<!^\\s*)(?=\"(?!\\s?\\+\\n))",
                     "beginCaptures": {
                         "1": {

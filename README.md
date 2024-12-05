@@ -1,6 +1,6 @@
 [![VS Marketplace](https://badgen.net/vs-marketplace/v/StirlingMarketingGroup.go-mysql-highlighter)](https://marketplace.visualstudio.com/items?itemName=StirlingMarketingGroup.go-mysql-highlighter)
 
-# Go MySQL Highlighter
+# MySQL Syntax Highlighter for Go
 
 Syntax highlights MySQL strings in Golang. Nothing more, nothing less.
 
